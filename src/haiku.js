@@ -5,9 +5,12 @@ export class Haiku {
     this.line3 = line3;
   }
   lineNumber () {
-    console.log(this);
     var lineArray = Object.values(this);
-    console.log(lineArray);
     return lineArray.length;
   }
+  line1syl () {
+    let line1Words = this.line1.split(" ");
+    console.log(line1Words)
+  }
 };
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           

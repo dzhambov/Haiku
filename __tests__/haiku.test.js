@@ -12,15 +12,25 @@ describe ('Haiku', () => {
   test('should determine if the haiku contains 3 lines', () => {
     expect(haiku.lineNumber()).toEqual(3);
   });
-  test('should determine the amount of syllables in line1', () =>{
-    expect(haiku.lineSyl1()).toEqual(5);
+  test('should split lines into an array of words', () => {
+    haiku.seperateLineWords();
+    expect(haiku.line1).toEqual(['Like', 'crunchy', 'cornflakes']);
+    expect(haiku.line2).toEqual(['Gold', 'leaves', 'rustle', 'underfoot']);
+    expect(haiku.line3).toEqual(['Beauty', 'in', 'decay']);
   });
-  test('should determine the amount of syllables in line2', () => {
-    expect(haiku.lineSyl2()).toEqual(10);
-  })
-  test('should split a line into an array of strings', () => {
-   haiku.seperateLineWords();
-   expect(haiku.line2).toBe(test);
-  })
-  
+  test('should determine the amount of syllables in line 1', () => {
+    haiku.seperateLineWords();
+    haiku.lineSyl();
+    expect(haiku.syllables[0]).toEqual(6);
+  });
+  test('should determine the amount of syllables in line 2', () => {
+    haiku.seperateLineWords();
+    haiku.lineSyl();
+    expect(haiku.syllables[1]).toEqual(10);
+  });
+  test('should determine the amount of syllables in line 3', () => {
+    haiku.seperateLineWords();
+    haiku.lineSyl();
+    expect(haiku.syllables[2]).toEqual(6);
+  });
 });                            

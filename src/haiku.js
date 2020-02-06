@@ -5,21 +5,54 @@ export class Haiku {
     this.line2 = line2;
     this.line3 = line3;
     this.vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+    this.vowelCount1 = 1
   }
   lineNumber () {
     var lineArray = this.allLines;
     return lineArray.length;
   }
-  lineSyl () {
-    let line = this.line1.split("");
-    console.log(line);
+  lineSyl1 () {
+    let lineLetters = this.line1.split("");
+    let lineWords = this.line1.split(" ");
+    console.log(lineWords);
+    for (var i = 0; i < lineLetters.length; i++) {
+      if (this.vowels.includes(lineLetters[i])) {
+       this.vowelCount1 ++;
+      }
+    }
+    // checking if the last letter is e
+    for (var i = 0; i < lineWords.length; i ++) {
+      lineWords.forEach(lineWord => {
+        var lastLetter = lineWord.split('')
+        console.log((lastLetter[i = (lineWord.length - 1)]))
+        if ((lastLetter[i = (lineWord.length - 1)]) === "e") {
+          ((this.vowelCount1) + 1);
+          console.log(this.vowelCount1);
+        }
+      });
+    }
+    return this.vowelCount1;
+  }
+
+  lineSyl2 () {
+    let line = this.line2.split("");
     let vowelCount = 0;
     for (var i = 0; i < line.length; i++) {
       if (this.vowels.includes(line[i])) {
         vowelCount ++;
       }
-      console.log(vowelCount);
     }
     return vowelCount;
   }
+  lineSyl3 () {
+    let line = this.line3.split("");
+    let vowelCount = 0;
+    for (var i = 0; i < line.length; i++) {
+      if (this.vowels.includes(line[i])) {
+        vowelCount ++;
+      }
+    }
+    return vowelCount;
+  }
+
 };

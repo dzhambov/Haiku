@@ -27,11 +27,9 @@ export class Haiku {
 
 
   lineSyl () {
-    
-   
-
     for (let i=0; i < 3; i++) {
       let lineLetters = this.allLines[i].split("");
+      // console.log(lineLetters);
       for (var n = 0; n < lineLetters.length; n++) {
         if (this.vowels.includes(lineLetters[n])) {
           this.vowelCount ++;
@@ -39,19 +37,48 @@ export class Haiku {
       }
       this.syllables.push(this.vowelCount);
       this.vowelCount = 0;
-      console.log(this.wordLineArray[i]);
+
       let lineWords = this.wordLineArray[i];
+      console.log(lineWords);
+      
+    }
+  }
 
-      for (let y = 0; y < lineWords.length; y ++){
-        
-
+  specialSyl () {
+    
+    for(let i = 0; i < 3; i++) {
+      let lastLetter = this.wordLineArray[i];
+      console.log(lastLetter);
+      for (var n=0; n < lastLetters.length; n++) {
+        if ((lastLetter[i = (lineWord.length - 1)]) === "e") {
+          this.vowelCount -=1;
+        }
       }
     }
+  }
+
+
+
+      // console.log(lineWords);
+      // for (let y = 0; y < lineWords.length; i++) {
+      //   varlastLetter
+      // }
+      
+      // lineWords.forEach(lineWord => {
+      //   var lastLetter = lineWord.split('')
+      //   console.log(lastLetter);
+      //   if ((lastLetter[i = (lineWord.length - 1)]) === "e") {
+      //             this.vowelCount1 -=1;
+      //   }
+        
+      // })
+        
+    
     // for(let i=0; i < wordLineArray[i].length; i ++) {
     //   if (th)
     // }
     
-    }
+    
   
   //   for (var i = 0; i < lineLetters.length; i++) {
   //     if (this.vowels.includes(lineLetters[i])) {

@@ -33,4 +33,9 @@ describe ('Haiku', () => {
     haiku.lineSyl();
     expect(haiku.syllables[2]).toEqual(6);
   });
+  test('should determine if individual words have special characters', () => {
+    haiku.seperateLineWords();
+    haiku.specialSyl();
+    expect(haiku.syllables[1].toEqual(8));
+  })
 });                            

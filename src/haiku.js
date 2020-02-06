@@ -1,11 +1,12 @@
 export class Haiku {
   constructor(line1, line2, line3) { 
+    this.lineArray = [],
     this.allLines = [line1, line2, line3];
     this.line1 = line1;
     this.line2 = line2;
     this.line3 = line3;
     this.vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
-    this.vowelCount1 = 1
+    this.vowelCount1 = 0
   }
   lineNumber () {
     var lineArray = this.allLines;
@@ -24,15 +25,24 @@ export class Haiku {
     for (var i = 0; i < lineWords.length; i ++) {
       lineWords.forEach(lineWord => {
         var lastLetter = lineWord.split('')
-        console.log((lastLetter[i = (lineWord.length - 1)]))
+        console.log(lastLetter);
         if ((lastLetter[i = (lineWord.length - 1)]) === "e") {
-          ((this.vowelCount1) + 1);
-          console.log(this.vowelCount1);
+          this.vowelCount1 -=1;
         }
       });
     }
     return this.vowelCount1;
   }
+
+  seperateLineWords () {
+    const [firstLine, secondLine, thirdLine] = this.lineArray;
+    this.line1 = firstLine.split(" ");
+    this.line2 = secondLine.split(" ");
+    this.line3 = thirdLine.split(" ");
+  }
+
+
+
 
   lineSyl2 () {
     let line = this.line2.split("");
